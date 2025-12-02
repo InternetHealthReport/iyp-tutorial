@@ -11,25 +11,25 @@
 # SITE SETTINGS
 #
 # title appears in the header
-title: Learn-Static Lesson Template
+title: IYP tutorial
 # title-icon appears in the header to give some pizazz (leave blank for none)
 # choose from Bootstrap Icons in _includes/bootstrap-icons
 # find names on https://icons.getbootstrap.com/ (or look in "_includes/bootstrap-icons")
 # some options: code-slash file-code gear tools lightblub book bookmark-star
-title-icon: code-slash
+title-icon: diagram-2
 # description appears in sidebar footer
-description: "Create a lesson website with markdown"
+description: ""
 # keywords for meta tags used by search engines
-keywords: "workshops, websites, gh-pages, jekyll"
+keywords: "Internet, yellow pages, IYP, internet measurement, internet dataset, knowledge graph"
 # image for meta tags, will appear when sharing link on social media
-featured-image: "/images/uidaho-workshop.jpg"
+featured-image: "/images/iyp-example.png"
 
 # author name, displayed in credits
-author: evanwill
+author: Romain Fontugne, Malte Tashiro
 # year or date published, displayed in sidebar
-publication_year: 2022
+publication_year: 2025
 # location of code, the full url to your github repository
-source-code: https://github.com/learn-static/lesson-template
+source-code: https://github.com/InternetHealthReport/iyp-tutorial
 # content license (typically "cc by-sa"), displayed in sidebar
 content_license: "CC BY-SA"
 # URL to the content license
