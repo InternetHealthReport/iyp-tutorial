@@ -13,7 +13,8 @@ This tutorial covers the following topics:
 * [**Adding data to IYP**](): the steps to add your own data to IYP.  
 * [**Q\&A**:]() Answers to questions or problems you might encounter.
 
-
+For writing queries see also the IYP cheatsheet:  
+[IYP-cheatsheet-image](https://docs.google.com/presentation/d/1UyeSFOIXCvM7CKXclT9vxgHcJxOAFX4mGc2eVCsLkLs/edit?usp=sharing)
 {% capture text %}**Disclaimer**
 
 * Data quality: IYP makes no changes to imported datasets. **Users should be aware of the original datasets’ limitations** to accurately interpret results and maximize the utility of IYP.  
