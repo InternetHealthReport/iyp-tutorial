@@ -18,3 +18,34 @@ $base-font-size: {{ site.base-font-size | default: '1.1rem' }};
 @import
   "template", "custom"
 ;
+
+/* Style for the copy button */
+
+pre.highlight {
+    position: relative; /* <--- Make sure this line is present */
+    /* Add any other existing styling you have for your code blocks here (padding, margin, background, etc.) */
+    padding-top: 0.5em; /* Add top padding so text doesn't overlap the button */
+}
+
+.copy-code-button {
+    position: absolute;
+    top: 0.0em;
+    right: 0.5em;
+    padding: 0.25em 0.5em;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.3s ease;
+}
+
+/* Show button on hover over the code block container */
+pre.highlight:hover .copy-code-button {
+    opacity: 1;
+}
+
+.copy-code-button:hover {
+    background-color: #333;
+}
