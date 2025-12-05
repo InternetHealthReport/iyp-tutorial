@@ -1,6 +1,6 @@
 # IYP tutorial
 
-This is the website for the Internet Yellow Pages tutorial. 
+This is the code for the Internet Yellow Pages tutorial website: [https://tutorial.iyp.ihr.live](https://tutorial.iyp.ihr.live)
 
 This code is based on the [lesson-template repository](https://github.com/learn-static/lesson-template) 
 from Learn Static.
