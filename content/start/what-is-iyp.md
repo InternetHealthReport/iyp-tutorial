@@ -18,7 +18,7 @@ More details on the design of IYP can be found in the paper “[The Wisdom of th
 
 * Data quality: IYP makes no changes to imported datasets. **Users should be aware of the original datasets’ limitations** to accurately interpret results and maximize the utility of IYP.  
 * Feedback: Report erroneous data found in IYP directly to the data providers, so that the original dataset can be fixed, the changes will be reflected in following IYP snapshots.  
-* Citation: If you publish work/tools based on IYP cite the original dataset used (and the [IYP paper](https://www.iijlab.net/en/members/romain/pdf/romain_imc2024.bib)\!).  
+* Citation: If you publish work/tools based on IYP cite the original dataset used (and the [IYP paper](https://www.iijlab.net/en/members/romain/pdf/romain_imc2024.bib)!).  
 * Heavy duty: For large scale analysis installing a local instance of IYP is recommended.  
 * Temporal analysis: IYP is not suitable for timely analysis and longitudinal analysis.
 {% endcapture %}
