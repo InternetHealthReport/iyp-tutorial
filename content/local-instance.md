@@ -87,7 +87,7 @@ flag to run IYP in background).
 You can stop the database with `Ctrl+C`.
 Afterwards, simply start/stop IYP in the background to use it.
 
-### **Start/Stop IYP**
+### Start/Stop IYP
 
 To start the database, run the following command:
 

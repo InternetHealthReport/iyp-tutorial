@@ -11,7 +11,7 @@ In the following, we conduct small studies using IYP and provide all correspondi
 
 First, we will learn about queries for finding specific prefixes and ASes. We also use these examples to explain how to use the IYP console interface and provide some tricks for making your own queries.
 
-## **Find prefixes originated by an AS**
+## Find prefixes originated by an AS
 
 We start by looking at the prefixes originated by a certain AS which is represented in IYP by the `ORIGINATE` relationship between `AS` and `Prefix` nodes.
 
@@ -80,7 +80,7 @@ RETURN DISTINCT pfx.prefix, a.asn, b.asn, ra.count, rb.count
 LIMIT 100
 ```
 
-## **Exercises**
+## Exercises
 
 1. Write a query that fetches only IPv4 prefixes.  
 2. Write a query that fetches only /24 prefixes.  

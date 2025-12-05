@@ -12,7 +12,7 @@ We cover these with the two following sections:
 * [Internet Health Report](#internet-health-report) (IHR) provides a high level web interface based on most important IYP datasets.  
 * [IYP data modeling](#iyp-data-modelling) provides an overview of the underlying data model.  
 
-## **Internet Health Report** {#internet-health-report}
+## Internet Health Report {#internet-health-report}
 
 The easiest way to browse the IYP database is to visit the [Internet Health Report website](https://www.ihr.live). There you can search for an Internet resource (e.g. AS, prefix, domain name) and get IYP data related to that resource.
 
@@ -31,7 +31,7 @@ For each widget, you’ll find a *chart, data, Cypher query*, and a *metadata* t
 * **And the Cypher Query tab gives you the exact query we used to pull the data from IYP. You can reuse that to query directly the IYP database or craft your own queries.** More on [how to write your own query in the next section](querying-iyp). 
 * The Metadata tab gives links to the original datasets and the freshness of the data. 
 
-## **IYP data modelling** {#iyp-data-modelling}
+## IYP data modelling {#iyp-data-modelling}
 
 Under the hood IYP is stored in a graph database where nodes represent mostly Internet resources and links give relationships between them. To do that we had to model all datasets integrated to IYP as graphs. For some datasets it makes a lot of sense, for some it may seem counter-intuitive. In any cases IYP’s github repository (the [iyp/crawler folder](https://github.com/InternetHealthReport/internet-yellow-pages/tree/main/iyp/crawlers)) contains a readme for each dataset where the modelling is documented.
 

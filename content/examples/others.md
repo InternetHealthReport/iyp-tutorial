@@ -117,7 +117,7 @@ More example queries are available at the following pages:
 * [RiPKI: The Tragic Story of RPKI Deployment in the Web Ecosystem, HotNets’15 (reproduction)](https://github.com/InternetHealthReport/iyp-notebooks/blob/main/hotnets15-rpki/hotnets15.ipynb)  
 * [Comments on DNS Robustness, IMC’18 (reproduction)](https://github.com/InternetHealthReport/iyp-notebooks/blob/main/imc18-dns/imc18.ipynb)
 
-## **Exercises**
+## Exercises
 
 * Find all hostnames in IYP that ends with ‘.gov’  
 * Find all hostnames in IYP that ends with ‘.gov’ and resolves to IPs in RPKI NotFound prefixes  

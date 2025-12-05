@@ -20,7 +20,7 @@ There you will find:
 {% include alert.html text=text color=secondary %}
 
 
-## **IYP console** {#iyp-console}
+## IYP console {#iyp-console}
 
 The easiest way to execute IYP queries is to use IYP’s public instance:
 
@@ -35,7 +35,7 @@ The [IYP console](https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:4
 
 {% include gallery-figure.html img="images/start/console-sidebar.png" alt="IYP console sidebar" caption="The top left tab in the <a href='https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443'>IYP console</a> displays all types of nodes and relationships available in the database. Click on one of those to see examples." width="75%" %}
 
-## **Hello world**
+## Hello world
 
 You are ready for your first query. Copy/paste the below query in the top input box (next to `neo4j$`) and click the play button.
 
@@ -50,7 +50,7 @@ You should see something similar to this (click on the node labels at the top ri
 
 This graph shows ASes that contain the word ‘Hello’ in their name. If you see a lot more links that means you haven’t un-checked the `Connect result nodes` option in the settings (**please uncheck that option!**).
 
-## **Cypher 101**
+## Cypher 101
 
 Cypher is the main language used to query IYP. It has some similarities with SQL but it is designed to query graph databases. That means instead of looking for rows in tables, a Cypher query describes patterns to find in a graph.
 
