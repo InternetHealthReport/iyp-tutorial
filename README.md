@@ -1,7 +1,8 @@
 # IYP tutorial
 
-This is the website for the Internet Yellow Pages tutorial. This is based on
-the [lesson-template repository](https://github.com/learn-static/lesson-template) 
+This is the website for the Internet Yellow Pages tutorial. 
+
+This code is based on the [lesson-template repository](https://github.com/learn-static/lesson-template) 
 from Learn Static.
 
 See the Learn Static's [demo site](https://learn-static.github.io/lesson-template/)
