@@ -16,7 +16,7 @@ RETURN p LIMIT 25
 
 **Peering LANs** of IXPs:  
 ```cypher  
-MATCH p = (pfx:Prefix)-[:MANAGED_BY]-(:IXP)  
+MATCH p = (pfx:PeeringLAN)-[:MANAGED_BY]-(:IXP)  
 RETURN p LIMIT 50  
 ```
 
@@ -29,18 +29,19 @@ OPTIONAL MATCH (a)-[:NAME {reference_org: 'RIPE NCC'}]->(n3:Name)
 RETURN a.asn, coalesce(n1.name, n2.name, n3.name) AS name  
 ```
 
-**RPKI ROAs** for prefixes not seen in BGP:  
+Ten **RPKI ROAs** for prefixes not seen in BGP:  
 ```cypher  
-MATCH (roa_as:AS)-[:ROUTE_ORIGIN_AUTHORIZATION]-(pfx:Prefix)  
+MATCH (roa_as:AS)-[:ROUTE_ORIGIN_AUTHORIZATION]-(pfx:RPKIPrefix)  
 WHERE NOT (pfx)-[:ORIGINATE]-(:AS)  
-RETURN pfx.prefix, roa_as.asn  
+RETURN pfx.prefix, roa_as.asn
+LIMIT 10
 ```
 
-**RPKI invalid prefixes** (all possible  types: RPKI Valid / RPKI Invalid / RPKI NotFound):  
+**RPKI invalid prefixes** (all possible  types: RPKI Valid / RPKI Invalid / RPKI Invalid,more-specific / RPKI NotFound):  
 ```cypher  
-MATCH (pfx:Prefix)-[:CATEGORIZED]-(t:Tag)  
-WHERE t.label = "RPKI Invalid"  
-RETURN pfx.prefix  
+MATCH (pfx:BGPPrefix)-[:CATEGORIZED]-(t:Tag)  
+WHERE t.label STARTS WITH "RPKI Invalid"  
+RETURN pfx.prefix, t.label 
 ```
 
 All the **parent domain names** of 'server.transfer.us-west-1.amazonaws.com':   
@@ -51,18 +52,22 @@ RETURN p
 
 **Top 1k domain names** in **Tranco**:  
 ```cypher  
-MATCH (dn:DomainName)-[r:RANK]-(:Ranking)  
-WHERE r.reference_name = 'tranco.top1m' AND r.rank < 1000  
-RETURN dn.name  
+MATCH (dn:DomainName)-[r:RANK]-(:Ranking {name: "Tranco top 1M"})  
+WHERE r.rank < 1000  
+RETURN dn.name
 ```
 
 **Top 1k website** from **CrUX** for France and the corresponding hosting ASes:  
 ```cypher  
-MATCH (h:HostName)-[r:RANK]-(:Ranking)-[:COUNTRY]-(c:Country)  
-WHERE r.rank <= 1000  
-  AND r.reference_name = 'google.crux_top1m_country'  
-  AND c.country_code = 'FR'  
-MATCH (h)-[:RESOLVES_TO {reference_org:'OpenINTEL'}]-(:IP)-[:PART_OF]-(:Prefix)-[:ORIGINATE]-(net:AS)  
+// Find all Rankings for France
+MATCH (ra:Ranking)-[:COUNTRY]-(c:Country)
+WHERE c.country_code = 'FR'
+// Find the top 1k for CRuX
+MATCH (h:HostName)-[r:RANK]-(ra)
+WHERE r.rank <= 1000 AND r.reference_name = 'google.crux_top1m_country'
+// Find originating ASes
+MATCH (h)-[re:RESOLVES_TO]-(:IP)-[:PART_OF]-(:BGPPrefix)-[:ORIGINATE]-(net:AS)  
+WHERE re.reference_name = 'openintel.crux'
 RETURN h.name, COLLECT(DISTINCT net.asn)  
 ```
 
@@ -97,7 +102,7 @@ RETURN p LIMIT 25
 MATCH (eyeball:AS)-[pop:POPULATION]-(c:Country)  
 WHERE c.country_code = 'US'  
 // Find the name for each AS  
-OPTIONAL MATCH (eyeball)-[:NAME {reference_org:'BGP.Tools'}]-(n:Name)  
+OPTIONAL MATCH (eyeball)-[:NAME {reference_org:'bgp.tools'}]-(n:Name)  
 // Group ASNs by name (first word of the name), list all ASNs, and the total population  
 RETURN head(split(n.name,' ')), collect(eyeball.asn), sum(pop.percent) as total_pop  
 ORDER BY total_pop DESC  

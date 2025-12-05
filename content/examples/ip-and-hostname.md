@@ -10,12 +10,13 @@ Now we’ll see how to query more complex patterns and introduce other types of 
 
 ## Finding popular IPs in a prefix
 
-Some of the datasets integrated into IYP provide IP addresses and hostnames. A good example of that are the top popular websites and DNS nameservers provided by Tranco and OpenINTEL.
+Some of the datasets integrated into IYP provide IP addresses and hostnames. 
+A good example of that are the top popular websites and DNS nameservers provided by Tranco and OpenINTEL.
 
-The query to fetch any hostnames (from any of the integrated dataset) hosted by AS2497 is:
+The query to fetch any hostnames (from any of the integrated dataset) hosted by the University of Tokyo (AS2501) is:
 
 ```cypher  
-MATCH (:AS {asn:2497})-[:ORIGINATE]-(pfx:Prefix)-[:PART_OF]-(:IP)-[:RESOLVES_TO]-(h:HostName) 
+MATCH (:AS {asn:2501})-[:ORIGINATE]-(pfx:BGPPrefix)-[:PART_OF]-(:IP)-[:RESOLVES_TO]-(h:HostName) 
 RETURN pfx.prefix, collect(DISTINCT h.name)
 ```
 
@@ -24,17 +25,20 @@ Note the usage of `collect` in the `RETURN` clause. This function is used to com
 However, the above query is returning only prefixes that are related to hostnames. It won’t return an empty hostname list. To list all prefixes and their corresponding hostnames (if they have any) we should break down the previous query into two parts and make one of the parts optional. Optional parts of a pattern are preceded by the keyword `OPTIONAL`, hence the previous query becomes:
 
 ```cypher  
-MATCH (:AS {asn:2497})-[:ORIGINATE]-(pfx:Prefix) 
+MATCH (:AS {asn:2501})-[:ORIGINATE]-(pfx:BGPPrefix) 
 OPTIONAL MATCH (pfx)-[:PART_OF]-(:IP)-[:RESOLVES_TO]-(h:HostName)
 RETURN pfx.prefix, collect(DISTINCT h.name)
 ```
 
 ## Finding DNS authoritative nameservers and corresponding domains
 
-Looking at the results of the above query you may see a lot of hostnames that start with ‘ns’. Those are typically DNS nameservers. In IYP a node can have multiple types. The DNS nameservers are both `HostName` and `AuthoritativeNameServer`. Hence, the following query finds all authoritative nameservers hosted by AS2497 and the number of domains they manage.
+Looking at the results of the above query you may see a couple of hostnames that start with ‘dns’ or ‘ns’.
+Those are typically DNS nameservers. 
+In IYP a node can have multiple types. The DNS nameservers are both `HostName` and `AuthoritativeNameServer`.
+Hence, the following query finds all authoritative nameservers hosted by AS2501 and the number of domains they manage.
 
 ```cypher  
-MATCH (:AS {asn:2497})-[:ORIGINATE]-(pfx:Prefix)
+MATCH (:AS {asn:2501})-[:ORIGINATE]-(pfx:BGPPrefix)
 MATCH (pfx)-[:PART_OF]-(:IP)-[:RESOLVES_TO]-(ns:AuthoritativeNameServer)
 OPTIONAL MATCH (dn:DomainName)-[:MANAGED_BY]-(ns) 
 RETURN ns.name, count(DISTINCT dn.name) AS nb_domains, collect(DISTINCT dn.name)
