@@ -11,20 +11,20 @@ Once you have modeled your data, you can start writing a *crawler*. The main tas
 
 The repository and code is structured like this:  
 ```  
-`internet-yellow-pages/`  
-`├─ iyp/`  
-`│  ├─ __init__.py <- contains IYP module`  
-`│  ├─ crawlers/`  
-`│  │  ├─ org/ <- name of the organization`  
-`│  │  │  ├─ README.md <- README describing datasets and modelling`  
-`│  │  │  ├─ crawler1.py <- one crawler per dataset`  
-`│  │  │  ├─ crawler2.py`  
-`│  ├─ post/ <- for post-processing scripts`  
+internet-yellow-pages/
+├─ iyp/
+│  ├─ __init__.py <- contains IYP module
+│  ├─ crawlers/
+│  │  ├─ org/ <- name of the organization
+│  │  │  ├─ README.md <- README describing datasets and modelling
+│  │  │  ├─ crawler1.py <- one crawler per dataset
+│  │  │  ├─ crawler2.py
+│  ├─ post/ <- for post-processing scripts
 ```  
 The canonical way to execute a crawler is:
 
 ```bash  
-`python3 -m iyp.crawlers.org.crawler1`  
+python3 -m iyp.crawlers.org.crawler1
 ```
 
 ## Writing a IYP crawler
