@@ -49,3 +49,10 @@ Note the use of:
 * the `count` function (similar to SQL) to count the number of domain names,  
 * the `AS` keyword to name a result column,  
 * the `ORDER BY` and `DESC` keywords to sort the results (similar to SQL).
+
+## Exercises
+
+1. Write a query that finds the AS hosting the hostname `example.com`
+2. Write a query fetching hostnames that resolves to IP addresses located in
+   multiple ASes.
+3. Find hostnames that are located in prefixes that RPKI invalid. 

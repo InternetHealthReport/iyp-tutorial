@@ -15,7 +15,7 @@ There you will find:
 
 * the different types of [nodes](https://github.com/InternetHealthReport/internet-yellow-pages/blob/main/documentation/node-types.md) and [relationships](https://github.com/InternetHealthReport/internet-yellow-pages/blob/main/documentation/relationship-types.md) available,  
 * the list of [all integrated datasets](https://github.com/InternetHealthReport/internet-yellow-pages/blob/main/documentation/data-sources.md),  
-* see also the [IYP cheatsheet](https://docs.google.com/presentation/d/1UyeSFOIXCvM7CKXclT9vxgHcJxOAFX4mGc2eVCsLkLs/edit?usp=sharing)
+* see also the [IYP cheatsheet](https://docs.google.com/presentation/d/1UyeSFOIXCvM7CKXclT9vxgHcJxOAFX4mGc2eVCsLkLs/edit?usp=sharing).
 {% endcapture %}
 {% include alert.html text=text color=secondary %}
 
@@ -48,7 +48,7 @@ You should see something similar to this (click on the node labels at the top ri
 {% include gallery-figure.html img="images/start/hello-results.png" alt="Results for the Hello World query." caption="Results for the Hello World query." width="75%" %}
 
 
-This graph shows ASes that contain the word ‘Hello’ in their name. If you see a lot more links that means you haven’t un-checked the `Connect result nodes` option in the settings (**please uncheck that option!**).
+This graph shows ASes that contain the word ‘Hello’ in their name. If you see a lot more links that means you haven’t un-checked the `Connect result nodes` option in the settings ([**please uncheck that option!**](#iyp-console)).
 
 ## Cypher 101
 
@@ -58,7 +58,7 @@ The pattern is given in an ASCII art representation where nodes are depicted by 
 
 {% include gallery-figure.html img="images/start/cypher-ascii.png" alt="Cypher’s ASCII representation of graphs." caption="Cypher’s ASCII representation of graphs." width="75%" %}
 
-The simplest pattern we can look for is a node. The below query finds the AS node with ASN 2497 (try it in the IYP console\!):
+The simplest pattern we can look for is a node. The below query finds the AS node with ASN 2497 (try it in the IYP console!):
 
 ```cypher  
 MATCH (iij:AS)  
@@ -70,7 +70,7 @@ Now let’s see how the query works:
 
 - The `MATCH` clause defines the pattern to find in the graph.  
 - `(iij:AS)` is the pattern we are looking for. The parenthesis show that it is a node, `iij` is an arbitrary variable to refer to that node later in the query, and the type of node is given after the colon.  
-- The WHERE clause describes conditions for nodes or relationships that match the pattern. Here we specify that the node called iij should have a property `asn` that equals 2497\.  
+- The WHERE clause describes conditions for nodes or relationships that match the pattern. Here we specify that the node called iij should have a property `asn` that equals 2497.  
 - The `RETURN` clause describes the data we want to extract from the found patterns. Here we return `iij` the node that satisfies both the `MATCH` and `WHERE` clauses.
 
 Another way to specify the condition for the node property is to set it within the search pattern. For example the following query returns exactly the same results as the above one:

@@ -31,9 +31,9 @@ RETURN a.asn, coalesce(n1.name, n2.name, n3.name) AS name
 
 Ten **RPKI ROAs** for prefixes not seen in BGP:  
 ```cypher  
-MATCH (roa_as:AS)-[:ROUTE_ORIGIN_AUTHORIZATION]-(pfx:RPKIPrefix)  
-WHERE NOT (pfx)-[:ORIGINATE]-(:AS)  
-RETURN pfx.prefix, roa_as.asn
+MATCH (roa_as:AS)-[:ROUTE_ORIGIN_AUTHORIZATION]-(rpfx:RPKIPrefix)
+WHERE NOT (rpfx)-[:PART_OF]-(:BGPPrefix {prefix: rpfx.prefix})
+RETURN rpfx.prefix, roa_as.asn
 LIMIT 10
 ```
 

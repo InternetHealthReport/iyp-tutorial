@@ -3,11 +3,11 @@ nav_order: 5
 title: Hosting a local IYP instance
 ---
 
-To perform extensive analysis or analysis including your own datasets, we recommend that you locally host your own instance of IYP. This is also useful if you are on-the-go without a stable Internet connectivity. Don’t worry, apart from disk space, IYP is pretty lightweight\!
+To perform extensive analysis or analysis including your own datasets, we recommend that you locally host your own instance of IYP. This is also useful if you are on-the-go without a stable Internet connectivity. Don’t worry, apart from disk space, IYP is pretty lightweight!
 
 ## System requirements
 
-- [Docker](https://www.docker.com/) \+ [Docker Compose](https://docs.docker.com/compose/install/)  
+- [Docker](https://www.docker.com/) + [Docker Compose](https://docs.docker.com/compose/install/)  
 - About 100GB of free disk space  
 - At least 2GB of RAM  
 - At least 1 CPU core :)
@@ -20,7 +20,7 @@ The first thing we have to do is to clone the IYP repository:
 git clone https://github.com/InternetHealthReport/internet-yellow-pages.git
 ```
 
-Go to the directory \`internet-yellow-pages\`, the following steps (download database and setup IYP) should be done from this directory.
+Go to the directory `internet-yellow-pages`, the following steps (download database and setup IYP) should be done from this directory.
 
 ## Download a database dump
 
@@ -48,7 +48,7 @@ https://archive.ihr.live/ihr/iyp/2024/07/22/iyp-2024-07-22.dump
 
 The dump file needs to be called `neo4j.dump` and needs to be put in a folder called `dumps` (`dumps/neo4j.dump`).
 
-To create the folder and download a dump with \`curl\`:
+To create the folder and download a dump with `curl`:
 
 ```bash  
 mkdir dumps
