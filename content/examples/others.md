@@ -59,16 +59,16 @@ RETURN dn.name
 
 **Top 1k website** from **CrUX** for France and the corresponding hosting ASes:  
 ```cypher  
-// Find all Rankings for France
-MATCH (ra:Ranking)-[:COUNTRY]-(c:Country)
-WHERE c.country_code = 'FR'
-// Find the top 1k for CRuX
+// Find the CRuX Rankings for France
+MATCH (ra:Ranking)-[cr:COUNTRY]-(c:Country)
+WHERE c.country_code = 'FR' AND cr.reference_name = 'google.crux_top1m_country'
+// Find the top 1k
 MATCH (h:HostName)-[r:RANK]-(ra)
-WHERE r.rank <= 1000 AND r.reference_name = 'google.crux_top1m_country'
+WHERE r.rank <= 1000
 // Find originating ASes
 MATCH (h)-[re:RESOLVES_TO]-(:IP)-[:PART_OF]-(:BGPPrefix)-[:ORIGINATE]-(net:AS)  
 WHERE re.reference_name = 'openintel.crux'
-RETURN h.name, COLLECT(DISTINCT net.asn)  
+RETURN h.name, COLLECT(DISTINCT net.asn)
 ```
 
 Resources allocated to the same opaque ID (from **RIR’s delegated stat files**) as AS15169 (Google):  
