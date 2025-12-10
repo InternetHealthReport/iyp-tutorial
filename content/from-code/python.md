@@ -1,5 +1,5 @@
 ---
-section: Accessing IYP from Code
+section: Accessing IYP from code
 nav_order: 2
 title: Simple Python example
 ---

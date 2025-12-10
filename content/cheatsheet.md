@@ -1,6 +1,6 @@
 ---
 nav_order: 98 
-title: IYP Cheatsheet
+title: IYP cheatsheet
 gallery: true
 ---
 

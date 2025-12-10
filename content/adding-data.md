@@ -9,8 +9,8 @@ Once you have modeled your data, you can start writing a *crawler*. The main tas
 
 ## IYP code structure
 
-The repository and code is structured like this:  
-```  
+The repository and code is structured like this:
+```
 internet-yellow-pages/
 ├─ iyp/
 │  ├─ __init__.py <- contains IYP module
@@ -20,10 +20,10 @@ internet-yellow-pages/
 │  │  │  ├─ crawler1.py <- one crawler per dataset
 │  │  │  ├─ crawler2.py
 │  ├─ post/ <- for post-processing scripts
-```  
+```
 The canonical way to execute a crawler is:
 
-```bash  
+```bash
 python3 -m iyp.crawlers.org.crawler1
 ```
 
@@ -37,9 +37,9 @@ If you want to add private data to your own instance, feel free to do so. Howeve
 
 The workflow for this is usually as follows:
 
-1. Propose a new dataset by opening a [discussion](https://github.com/InternetHealthReport/internet-yellow-pages/discussions). The point of the discussion is to decide if a dataset should be included and how to model it. Please add a short description of why the dataset would be useful for you/others. This is just to prevent adding datasets for the sake of it (“because we can”) which inflates to database size. You also do not have to provide a perfect model at the start, we can figure this out together.  
-2. Once it is decided that we want to integrate the dataset and how to model it, the discussion will be converted into an [issue](https://github.com/InternetHealthReport/internet-yellow-pages/issues). Then you (or someone else) can implement it.  
-3. Open a [pull request](https://github.com/InternetHealthReport/internet-yellow-pages/pulls) with the crawler implementation.  
-4. We will merge it and the next dump will contain your dataset!
+1. Propose a new dataset by opening a [discussion](https://github.com/InternetHealthReport/internet-yellow-pages/discussions). The point of the discussion is to decide if a dataset should be included and how to model it. Please add a short description of why the dataset would be useful for you/others. This is just to prevent adding datasets for the sake of it (“because we can”) which inflates to database size. You also do not have to provide a perfect model at the start, we can figure this out together.
+1. Once it is decided that we want to integrate the dataset and how to model it, the discussion will be converted into an [issue](https://github.com/InternetHealthReport/internet-yellow-pages/issues). Then you (or someone else) can implement it.
+1. Open a [pull request](https://github.com/InternetHealthReport/internet-yellow-pages/pulls) with the crawler implementation.
+1. We will merge it and the next dump will contain your dataset!
 
 

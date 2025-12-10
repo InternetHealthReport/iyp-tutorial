@@ -1,5 +1,5 @@
 ---
-section_id: Accessing IYP from Code
+section_id: Accessing IYP from code
 nav_order: 4
 title: Setup
 ---
