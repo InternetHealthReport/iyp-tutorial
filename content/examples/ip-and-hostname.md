@@ -8,9 +8,9 @@ gallery: true
 
 Now we will see how to query more complex patterns and introduce other types of
 nodes and relationships: `IP`, `HostName`, `PART_OF`, `RESOLVES_TO`.
-We’ll also learn about the [Cypher Aggregating
-function](https://neo4j.com/docs/cypher-manual/current/functions/aggregating/)
-`collect()`
+We will also learn about the [Cypher aggregating
+functions](https://neo4j.com/docs/cypher-manual/current/functions/aggregating/)
+`collect()` and `count()`.
 
 ## Finding popular IPs in a prefix
 
@@ -18,8 +18,8 @@ Some of the datasets integrated into IYP provide IP addresses and hostnames.
 A good example of that are the top popular websites and DNS nameservers provided
 by Tranco and OpenINTEL.
 
-The query to fetch any hostnames (from any of the integrated datasets) hosted by
-the University of Tokyo (AS2501) is:
+The query to fetch prefixes originated by the University of Tokyo (AS2501)
+related to hostnames (from any of the integrated datasets) is:
 
 ```cypher
 MATCH (:AS {asn:2501})-[:ORIGINATE]-(pfx:BGPPrefix)-[:PART_OF]-(:IP)-[:RESOLVES_TO]-(h:HostName)
@@ -32,9 +32,14 @@ If you use aggregation functions in the return clause, it implies (in SQL terms)
 a “GROUP BY” on all returned elements that are not aggregated (like `pfx.prefix`
 in this example).
 
-However, the above query is returning only prefixes that are related to
-hostnames.
-It won’t return an empty hostname list.
+You might also notice that for longer queries the order of nodes and
+relationship “verbs” can get mixed up (e.g., “IP RESOLVES_TO HostName” instead
+of “HostName RESOLVES_TO IP”).
+This is sometimes unavoidable and should not confuse you as the order does not
+matter for Cypher.
+
+The above query is returning only prefixes that are related to hostnames.
+It will not return an empty hostname list.
 To list all prefixes and their corresponding hostnames (if they have any) we
 should break down the previous query into two parts and make one of the parts
 optional.
