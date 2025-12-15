@@ -4,11 +4,14 @@ nav_order: 3
 title: Using Pandas data frames
 ---
 
-If your results are a bit more complex and you like working with [Pandas](https://pandas.pydata.org/) data frames, you can use the keys returned by `execute_query()` to easily load the results into a data frame. 
+If your results are a bit more complex and you like working with
+[Pandas](https://pandas.pydata.org/) data frames, you can use the keys returned
+by `execute_query()` to easily load the results into a data frame.
 
-For example, to get the top 1000 ASes from AS Rank with their name as known by RIPE and their registered country according to the NRO delegated stats:
+For example, to get the top 1000 ASes from AS Rank with their name as known by
+RIPE and their registered country according to the NRO delegated stats:
 
-```python  
+```python
 import pandas as pd
 
 # [...] database init like above
@@ -29,7 +32,12 @@ df = pd.DataFrame(records, columns=keys)
 # df = db.execute_query(query, result_transformer_=neo4j.Result.to_df)
 ```
 
-For querying IYP this is pretty much all you need to know. For more examples see the [Jupyter notebooks](https://github.com/InternetHealthReport/iyp-notebooks) we provide as part of our paper. However, you will notice that only the queries are more involved, the Python functions are the same.
+For querying IYP this is pretty much all you need to know.
+For more examples see the [Jupyter
+notebooks](https://github.com/InternetHealthReport/iyp-notebooks) we provide as
+part of our paper.
+However, you will notice that only the queries are more involved, the Python
+functions are the same.
 
 ## References
 
