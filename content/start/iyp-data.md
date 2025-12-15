@@ -68,7 +68,7 @@ The below figure is an extract of BGP data showing the two ASes connected to the
 University of Tokyo (AS2501):
 
 {% include gallery-figure.html
-    img="images/start/peering-2501.png"
+    img="images/start/peering-2501.svg"
     alt="Networks peering with AS2501"
     caption="Networks peering with AS2501."
     width="45%"
@@ -82,7 +82,7 @@ For a counter-intuitive example see the graph below.
 These are the names associated with AS2501:
 
 {% include gallery-figure.html
-    img="images/start/name-2501.png"
+    img="images/start/name-2501.svg"
     alt="Names for AS2501."
     caption="Names for AS2501."
     width="55%"
