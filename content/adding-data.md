@@ -11,7 +11,8 @@ and
 [relationship](https://github.com/InternetHealthReport/internet-yellow-pages/blob/main/documentation/relationship-types.md)
 types and see if and where your data could attach to the existing graph and if
 you can reuse existing relationship types.
-Also refer back to the [IYP data modeling](#iyp-data-modelling) section.
+Also refer back to the [IYP data
+modeling](start/iyp-data.html#iyp-data-modelling) section.
 If you need help, feel free to start a
 [discussion](https://github.com/InternetHealthReport/internet-yellow-pages/discussions)
 on GitHub.
