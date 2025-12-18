@@ -16,7 +16,7 @@ including running IYP locally, and adding datasets to IYP.
 %}
 
 {% include figure.html
-    img="images/iyp-example.png"
+    img="images/iyp-example.svg"
     alt="Welcome!"
     caption=""
     width="75%"

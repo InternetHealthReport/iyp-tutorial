@@ -22,7 +22,7 @@ description: ""
 # keywords for meta tags used by search engines
 keywords: "Internet, yellow pages, IYP, internet measurement, internet dataset, knowledge graph"
 # image for meta tags, will appear when sharing link on social media
-featured-image: "/images/iyp-example.png"
+featured-image: "/images/iyp-example.svg"
 
 # author name, displayed in credits
 author: Romain Fontugne, Malte Tashiro
