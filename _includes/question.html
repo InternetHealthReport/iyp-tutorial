@@ -10,11 +10,14 @@
     - "title" = card title text inside card content area
     - "text" = main card text, can use markdown formatting. Use a Liquid capture to add more complex content.
     - "solution" = displayed in the collapse
+    - "solution2" = alternative solution
     - "button" = text of the button that triggers the collapse to open (defaults to "View Solution")
+    - "button2" = text of the button that triggers the alternative collapse to open (defaults to "View Solution #2")
     - "heading_level" = customize the level of the heading if necessary for accessibility, choose "h1", "h2", "h3", etc (optional, default "h2")
+    - "id" = manually specify the includeid
 
 {%- endcomment -%}
-{% capture includeid %}{{ include.header | default: include.title | default: 'solution' | slugify }}{% endcapture %}
+{% capture includeid %}{{ include.id | default: include.header | default: include.title | default: 'solution' | slugify }}{% endcapture %}
 <div class="card my-4">
     {% if include.header %}<{{ include.heading_level | default: 'h2' | strip }} class="card-header no_anchor">{{ include.header }}</{{ include.heading_level | default: 'h2' | strip }}>{%- endif -%}
     <div class="card-body">
@@ -25,10 +28,21 @@
         {% if include.solution %}
         <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ includeid }}" aria-expanded="false" aria-controls="collapseExample">
             {{ include.button | default: 'View Solution' }} {% include icon.html icon="chevron-down" %}
-        </button>
+        </button>{% endif %}
+        {% if include.solution2 %}
+        <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ includeid }}2" aria-expanded="false" aria-controls="collapseExample">
+            {{ include.button2 | default: 'View Solution #2' }} {% include icon.html icon="chevron-down" %}
+        </button>{% endif %}
+        {% if include.solution %}
         <div class="collapse" id="collapse{{ includeid }}">
           <div class="card card-body">
             {{ include.solution | markdownify }}
+          </div>
+        </div>{% endif %}
+        {% if include.solution2 %}
+        <div class="collapse" id="collapse{{ includeid }}2">
+          <div class="card card-body">
+            {{ include.solution2 | markdownify }}
           </div>
         </div>{% endif %}
     </div>
