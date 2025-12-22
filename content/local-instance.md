@@ -118,3 +118,16 @@ To stop the database, run the following command:
 ``` bash
 docker stop iyp
 ```
+
+
+### Access your local instance
+
+You should now be able to reach the IYP console at:
+[**http://localhost:7474**](http://localhost:7474)
+
+Unlike the public instance, your local instance has a default user and
+password which are required for authentication:
+- User: **neo4j**
+- Password: **password**
+
+Don't change the connect URL, it should be: neo4j://localhost:7687
