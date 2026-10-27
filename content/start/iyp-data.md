@@ -28,7 +28,7 @@ and get IYP data related to that resource.
 {% include gallery-figure.html
     img="images/start/ihr-website.png"
     alt="IHR website"
-    caption="IYP routing data shown on the<a
+    caption="IYP routing data shown on the <a
     href='https://www.ihr.live/en/network/AS2497?active=routing'>IHR
     website</a>."
     width="75%"
