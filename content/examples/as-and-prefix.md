@@ -36,7 +36,7 @@ RETURN p
 ```
 
 Copy/paste this query into the [IYP
-Console](https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443).
+Console](https://iyp.iijlab.net/iyp/browser/?connectURL=neo4j+s://iyp-bolt.iijlab.net:443).
 You should obtain a busy graph like this:
 
 {% include gallery-figure.html
@@ -45,7 +45,7 @@ You should obtain a busy graph like this:
 %}
 
 By clicking on any of the nodes you will see its properties in the right
-sidepanel (if you do not see the panel, click the `<` icon).
+sidepanel (if you do not see the panel, click the {% include icon.html icon="file-earmark-text" %} icon).
 It should look something like this:
 
 {% include gallery-figure.html
@@ -69,8 +69,8 @@ RETURN p
 ```
 
 Copy/paste this query into the [IYP
-Console](https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443), you
-should obtain another cute graph.
+Console](https://iyp.iijlab.net/iyp/browser/?connectURL=neo4j+s://iyp-bolt.iijlab.net:443),
+you should obtain another cute graph.
 
 You may wonder why there are multiple links between the same pair of nodes.
 This is because multiple datasets provide us with this same information.

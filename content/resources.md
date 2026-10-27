@@ -8,7 +8,7 @@ anchor_headings: false
 
 * [IYP main website](https://iyp.iijlab.net/)
 * [IYP
-  console](https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443)
+  console](https://iyp.iijlab.net/iyp/browser/?connectURL=neo4j+s://iyp-bolt.iijlab.net:443)
 * [IYP
   Gallery](https://github.com/InternetHealthReport/internet-yellow-pages/blob/main/documentation/gallery.md)
 * [IYP Github

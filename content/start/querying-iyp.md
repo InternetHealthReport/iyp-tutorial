@@ -37,23 +37,20 @@ and pointers to additional resources.
 The easiest way to execute IYP queries is to use IYP’s public instance:
 
 1. Go to the [IYP
-   console](https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443).
-1. Turn off the **Connect result nodes** option in the settings available from
-   the cogwheel at bottom left (highly recommended).
+   console](https://iyp.iijlab.net/iyp/browser/?connectURL=neo4j+s://iyp-bolt.iijlab.net:443).
 1. Click on the **Connect** button (no username or password required).
 
 {% include gallery-figure.html
     img="images/start/iyp-console.png"
     alt="IYP console"
     caption="There is no username/password required to connect to the <a
-    href='https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443'>IYP
-    console</a>. Make sure you uncheck the “Connect result nodes” option in the
-    settings."
-    width="75%"
+    href='https://iyp.iijlab.net/iyp/browser/?connectURL=neo4j+s://iyp-bolt.iijlab.net:443'>IYP
+    console</a>."
+    width="50%"
 %}
 
 The [IYP
-console](https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443)
+console](https://iyp.iijlab.net/iyp/browser/?connectURL=neo4j+s://iyp-bolt.iijlab.net:443)
 provides a summary of the database which is quite handy when writing queries.
 At the top left there is a database icon that shows all types of nodes and
 relationships available in the database.
@@ -63,10 +60,9 @@ Clicking on a node or relationship type displays some examples.
     img="images/start/console-sidebar.png"
     alt="IYP console sidebar"
     caption="The top left tab in the <a
-    href='https://iyp.iijlab.net/iyp/browser/?dbms=iyp-bolt.iijlab.net:443'>IYP
+    href='https://iyp.iijlab.net/iyp/browser/?connectURL=neo4j+s://iyp-bolt.iijlab.net:443'>IYP
     console</a> displays all types of nodes and relationships available in the
     database. Click on one of those to see examples."
-    width="75%"
 %}
 
 ## Hello world
@@ -89,13 +85,9 @@ used as the caption of the node):
     img="images/start/hello-results.png"
     alt="Results for the Hello World query."
     caption="Results for the Hello World query."
-    width="75%"
 %}
 
 This graph shows ASes that contain the word “Hello” in their name.
-If you see a lot more links that means you have not unchecked the **Connect
-result nodes** option in the settings ([**please uncheck that
-option!**](#iyp-console)).
 
 ## Cypher 101
 
