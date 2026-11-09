@@ -423,7 +423,7 @@ RETURN count(h) AS num_websites
 ## Routing
 
 {% capture question %}
-Which AS announces the largest number of IPv4 prefixes? IPv6 prefixes?
+Which AS originates the largest number of IPv4 prefixes? IPv6 prefixes?
 
 **Bonus:** Do the same but for hyper-specific prefixes, i.e., /25 and smaller
 for IPv4 and /49 and smaller for IPv6.
