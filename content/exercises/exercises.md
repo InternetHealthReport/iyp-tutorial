@@ -437,7 +437,7 @@ IPv4 (use `af: 6` for IPv6):
 ```cypher
 MATCH (a:AS)-[:ORIGINATE]->(p:BGPPrefix {af: 4})
 RETURN a.asn AS asn, count(DISTINCT p) as num_pfx
-ORDER BY num_pfx
+ORDER BY num_pfx DESC
 LIMIT 1
 ```
 
